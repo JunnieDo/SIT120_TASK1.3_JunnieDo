@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- This section contains metadata about the document -->
+        <meta charset="UTF-8"> <!-- Character encoding for the document -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Viewport settings for responsive design -->
+        <title>Profolio</title> <!-- Title of the webpage -->
+        <link rel="stylesheet" type="text/css" href="./css.css"> <!-- Link to an external CSS stylesheet -->
+    </head>
+
+    <body>
+        <div id="app">
+            <!-- This is the main container for your web application -->
+            <nav class="navbar">
+                <!-- Navigation bar for navigating between pages -->
+                <ul>
+                    <!-- Link to the home page -->
+                    <li><a href="about.html" @click="navigate('about')">ABOUT</a></li>
+                    <li><a href="homepage.html" @click="navigate('back')">BACK</a></li>
+                    <!-- Link to the about page -->
+                </ul>
+            </nav>
+            <!-- Other content for your pages goes here -->
+            <h1 class="heading">This page is all about me!!!</h1>
+            <!-- Main heading of the page -->
+            <div class="centred-text">
+                <!-- A centered text container -->
+                <!-- Placeholder text -->
+            Who am I? 
+            I am an International student, who came from Vietnam. 
+            Website Interface Design is one of my specialties. 
+            I am a freelancer and a passionate Deakin University second-year student in Melbourne, Victoria, Australia. 
+            </div>
+            <img class="centered-image2" src="picture2.png" alt="Image Description">
+            <!-- An image centered on the page -->
+            <!-- Comment section -->
+        </div>
+        <div>
+        <h2>My Skill List:</h2>
+        <ul class="b">
+        <li>Critical Thinking</li>
+            <li>Problem Solving</li>
+                <li>Coding Languages: HTML,CSS,Python</li>
+        </ul>
+            <div class="comment-section">
+                <!-- Section for displaying comments -->
+                <h2>Comments</h2>
+                <!-- Sub-heading for the comments section -->
+                <div class="comment-box">
+                    <!-- A box for displaying comments -->
+                    <ul class="comment-list">
+                        <!-- Unordered list for comments -->
+                        <li v-for="comment in comments" class="comment-item">{{ comment }}</li>
+                        <!-- List items for individual comments -->
+                    </ul>
+                <div class="comment-input">
+                    <!-- Section for adding comments -->
+                    <textarea v-model="newComment" rows="4" placeholder="Add your comment"></textarea>
+                    <!-- Text area for entering comments -->
+                    <button @click="addComment">Submit</button>
+                    <!-- Button for submitting comments -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.0.11/dist/vue.global.prod.js"></script>
+        <script src="vue.js"></script>
+    </body>
+
+</html>

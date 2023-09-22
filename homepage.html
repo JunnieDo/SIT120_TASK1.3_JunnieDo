@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- This section contains metadata about the document -->
+        <meta charset="UTF-8"> <!-- Character encoding for the document -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Viewport settings for responsive design -->
+        <title>Article Website</title> <!-- Title of the webpage -->
+        <link rel="stylesheet" type="text/css" href="./css.css"> <!-- Link to an external CSS stylesheet -->
+    </head>
+
+    <body>
+        <div id="app">
+            <!-- This is the main container for your web application -->
+            <nav class="navbar">
+                <!-- Navigation bar for navigating between pages -->
+                <ul>
+                    <li><a href="homepage.html" @click="navigate('home')">HOME</a></li>
+                    <!-- Link to the home page -->
+                    <li><a href="about.html" @click="navigate('about')">ABOUT</a></li>
+                    <!-- Link to the about page -->
+                </ul>
+            </nav>
+            <!-- Other content for your pages goes here -->
+            <h1 class="heading">{{ pageTitle }}</h1>
+            <!-- Main heading of the page -->
+            <div class="centred-text">
+                <!-- A centered text container -->
+                <!-- Placeholder text -->Hi, my name is Junnie!
+                I am a 19-year-old freelancer and a dedicated second-year design student, pursuing my passion for creativity and innovation. 
+                I am an outgoing person, who has always seeking for new challenges and connect with diverse individuals.
+                As a creative person, I find inspiration in the world around me and constantly strive to learn and grow in my field. 
+                Whether it's through my academic pursuits or freelance projects, I am fueled by a thirst for knowledge and a deep desire to channel my creativity into meaningful design solutions.
+            </div>
+            <img class="centered-image" src="introduction.png" alt="Image Description">
+            <!-- An image centered on the page -->
+            <!-- Comment section -->
+            <div class="comment-section">
+                <!-- Section for displaying comments -->
+                <h2>Comments</h2>
+                <!-- Sub-heading for the comments section -->
+                <div class="comment-box">
+                    <!-- A box for displaying comments -->
+                    <ul class="comment-list">
+                        <!-- Unordered list for comments -->
+                        <li v-for="comment in comments" class="comment-item">{{ comment }}</li>
+                        <!-- List items for individual comments -->
+                    </ul>
+                </div>
+                <div class="comment-input">
+                    <!-- Section for adding comments -->
+                    <textarea v-model="newComment" rows="4" placeholder="Add your comment"></textarea>
+                    <!-- Text area for entering comments -->
+                    <button @click="addComment">Submit</button>
+                    <!-- Button for submitting comments -->
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.0.11/dist/vue.global.prod.js"></script>
+        <script src="vue.js"></script>
+    </body>
+
+</html>
